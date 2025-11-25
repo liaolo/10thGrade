@@ -10,10 +10,10 @@ namespace _9thGrade
     {
         public static void UnitTest()
         {
-            Targil1_d();
+           Targil7_67_b();
         }
 
-        public static void Targil1_a() // יוצר מלבן
+        public static void Targil17_66_a() // יוצר מלבן
         {
             for (int i = 1; i <= 5; i++)
             {
@@ -25,7 +25,7 @@ namespace _9thGrade
             }
         }
 
-        public static void Targil1_b() // יוצר משולש
+        public static void Targil7_66_b() // יוצר משולש
         {
             for (int i = 1; i <= 5; i++)
             {
@@ -36,7 +36,7 @@ namespace _9thGrade
 
         }
 
-        public static void Targil1_c() // יוצר ריבוע של 1-5
+        public static void Targil7_66_c() // יוצר ריבוע של 1-5
         {
             for (int i = 1; i <= 5; i++)
             {
@@ -46,7 +46,7 @@ namespace _9thGrade
             }
         }
 
-        public static void Targil1_d() // משולש הפוך
+        public static void Targil7_66_d() // משולש הפוך
         {
             for (int i = 1; i <= 5; i++)
             {
@@ -56,10 +56,28 @@ namespace _9thGrade
             }
         }
 
-        public static void Targil2() //
+        public static void Targil7_67_a()
         {
-
+            for (int j = 1; j <= 5; j++)
+            {
+                for (int i = 0; i < j; i++)
+                {
+                    Console.Write('*');
+                }
+                Console.WriteLine();
+            }
         }
-        
+
+        public static void Targil7_67_b()
+        {
+            for (int j = 0; j<5; j++)
+            {
+                for (int i = 5; i>j; i--)
+                {
+                    Console.Write('*');
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
