@@ -79,5 +79,17 @@ namespace _9thGrade
                 Console.WriteLine();
             }
         }
+
+        public static void Targil7_67_c()
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                for (int i = 5; i > j; i--)
+                {
+                    Console.Write('*');
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
