@@ -254,7 +254,7 @@ namespace _9thGrade
 
         public static void Targil_48()
         {
-            double grade, sum = 0, average,min=0;
+            double grade, sum = 0, average, min = 0;
             for (int i = 1; i <= 3; i++)
             {
                 average = 0;
@@ -265,7 +265,7 @@ namespace _9thGrade
                     grade = double.Parse(Console.ReadLine());
                     sum = sum + grade;
                     average = sum / 4;
-                    if(min<average)
+                    if (min < average)
                     {
                         min = average;
                     }

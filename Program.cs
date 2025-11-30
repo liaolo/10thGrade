@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             NesttedLoops.UnitTest();
+            StringPractice.UnitTest();
         }
     }
 }
