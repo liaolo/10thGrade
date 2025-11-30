@@ -14,6 +14,7 @@ namespace _9thGrade
             //Targil7_68();//
             //Targil7_69();//
             //Targil_48();//
+            Targil7_67_c();
         }
 
         public static void Targil7_66_a() // יוצר מלבן
@@ -85,7 +86,7 @@ namespace _9thGrade
 
         public static void Targil7_67_c()
         {
-            for (int j = 0; j <= 9; j++)
+            for (int j = 0; j <= 8; j++)
             {
                 for (int i = 0; i < 5; i++)
                 {
