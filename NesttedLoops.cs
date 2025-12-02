@@ -14,8 +14,7 @@ namespace _9thGrade
             //Targil7_68();//
             //Targil7_69();//
             //Targil_48();//
-            Targil7_67_c();
-
+            //Targil7_67_c();//
         }
 
         public static void Targil7_66_a() // יוצר מלבן
