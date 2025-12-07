@@ -65,11 +65,16 @@ namespace _9thGrade
             return a;
         }
 
+
+
+
+
+
         public static char Targil6(char c)
         {
             if (c >= 'a' && c <= 'z')
             {
-                c = (char)(c - 32);
+                c = (char)(c - ('a'-'A'));
             }
             return c;
         }
