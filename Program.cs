@@ -6,6 +6,7 @@
         {
             NesttedLoops.UnitTest();
             StringPractice.UnitTest();
+            Caesar.UnitTest();
         }
     }
 }
