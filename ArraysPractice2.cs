@@ -13,6 +13,29 @@ namespace _9thGrade
         {
 
         }
+        public static void T10_19()
+        {
+            int Pos, Kobia;
+            int[] Index = new int[25];
+            Console.WriteLine("Enter bord");
+            for (int i = 0; i < Index.Length; i++)
+            {
+                Index[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Enter your pos 10 - 15");
+            Pos = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter num of the Kobia");
+            Kobia = int.Parse(Console.ReadLine());
+            if (Kobia >= Index[Pos + Kobia - 1])
+            {
+                Pos += Kobia;
+            }
+            else
+            {
+                Pos = Pos - Kobia;
+            }
+            Console.WriteLine(Pos);
+        }
 
         public static int[] T10_22(int[] arr)
             // 11111בקוד בא ערכי האיבר יהיו אם המערך לדוגמה 12345 אז הוא יהפוך ל
@@ -52,12 +75,47 @@ namespace _9thGrade
                 Console.WriteLine(arr[i]);
             }
         }
-
-        //public static string[] T10_23b(string[] arrb, string[] arrg)
-        //{
-
-        //}
-
+        public static void Targil10_23B()
+        {
+            Console.WriteLine("Enter number of girls");
+            int Gnum = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter number of boys");
+            int Bnum = int.Parse(Console.ReadLine());
+            int num = 4 + Gnum + Bnum;
+            string[] arr = new string[num];
+            string[] arr2 = new string[num];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine("Enter the name of traveler number" + i);
+                arr[i] = Console.ReadLine();
+            }
+            for (int k = 0; k < num; k++)
+            {
+                arr2[k] = arr[k];
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = Gnum + 1; j < num - 3; j++)
+                {
+                    if (j != num - 4)
+                    {
+                        arr2[j] = arr[j + 1];
+                    }
+                    else
+                    {
+                        arr2[j] = arr[Gnum + 1];
+                    }
+                }
+                for (int k = 0; k < num; k++)
+                {
+                    arr[k] = arr2[k];
+                }
+            }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine(arr[i]);
+            }
+        }
         public static int[] T10_24(int[] arr)
         {
             for (int i = 0; i < arr.Length / 2; i++)
