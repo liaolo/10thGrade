@@ -15,6 +15,7 @@ namespace _9thGrade
             //Targil7_69();//
             //Targil_48();//
             //Targil7_67_c();//
+            //Console.WriteLine(lydia(6));
         }
 
         public static void Targil7_66_a() // יוצר מלבן
@@ -210,7 +211,6 @@ namespace _9thGrade
             double sal = 17, min = 17, minLastSal = 17, num;
             Console.Write("How many workers? ");
             num = int.Parse(Console.ReadLine());
-
             for (int j = 0; j < num; j++)
             {
                 double sum = 0;
@@ -274,5 +274,86 @@ namespace _9thGrade
             }
             Console.WriteLine("The lowest grade for group is " + min);
         }
+
+        public static bool lydia(int a)
+        {
+            bool b = true;
+            int n = a;
+            for (int i = 2; i < a; i++)
+            {
+                if (n % i == 0)
+                {
+                    b = false;
+                }
+            }
+            return b;
+
+        }
+
+        public static void lydia2()
+        {
+            for (int j = 2; j <= 100; j++)
+            {
+                for (int i = 0; i < j; i++)
+                {
+                    NesttedLoops.lydia(i);
+                }
+            }
+        }
+
+        public static void lydia3()
+        {
+            int workers;
+            double sal = 0, salmin = 0;
+            Console.WriteLine("How many works");
+            workers = int.Parse(Console.ReadLine());
+            for (int i = 0; i < workers; i++)
+            {
+                double sum = 0;
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.WriteLine("How much did you make each month");
+                    sal = int.Parse(Console.ReadLine());
+                    sum += sal;
+                }
+                Console.WriteLine("NEXT");
+                if (i == 0)
+                {
+                    salmin = sum;
+                }
+                if (sum < salmin)
+                {
+                    salmin = sum;
+                }
+            }
+            Console.WriteLine("The lowest salary is " + salmin);
+
+
+        }
+
+        public static void lydia4()
+        {
+            int num = 0, numsdarot, count = -1, max = 0;
+            Console.WriteLine("Enter number of series: ");
+            numsdarot = int.Parse(Console.ReadLine());
+            for (int i = 0; i < numsdarot; i++)
+            {
+                count = 0;
+                num = 0;
+                while (num != -1)
+                {
+                    Console.WriteLine("Enter a number (-1 to end series): ");
+                    num = int.Parse(Console.ReadLine());
+                    count++;
+                    if (count > max)
+                    {
+                        max = count;
+                    }
+                }
+            }
+
+            Console.WriteLine("The longest series is " + max);
+        }
+
     }
 }

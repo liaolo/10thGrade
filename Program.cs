@@ -7,6 +7,8 @@
             NesttedLoops.UnitTest();
             StringPractice.UnitTest();
             Caesar.UnitTest();
+            ArraysPractice.UnitTest();
+            ArraysPractice2.UnitTest();
         }
     }
 }
