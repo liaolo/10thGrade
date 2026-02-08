@@ -42,7 +42,25 @@ namespace Yod
             return (int)(Calc271() * 0.4 + Calc3() * 0.6 + 0.5);
         }
 
-        public string FinalString()
+        //public string FinalString()
+        //{
+        //    string s = "";
+        //    int final;
+        //    if (Has5())
+        //    {
+        //        s = "You got 5 units in CS!\n";
+        //        final = Calc5();
+        //    }
+        //    else
+        //    {
+        //        s = "You got 3 units in CS!\n";
+        //        final = Calc3();
+        //    }
+        //    s += "Your final grade is: " + final;
+        //    return s;
+        //}
+
+        public override string ToString()
         {
             string s = "";
             int final;
