@@ -14,12 +14,58 @@ namespace _9thGrade
         public double[] Duration;
         public double SumDuration;
 
-        public MusicTimeCac(string n, string[] Sn , double[] d)
+        public MusicTimeCac(string ArtistName, string[] SongName , double[] Duration)
         {
-            ArtistName = n;
-            SongName = Sn;
-            Duration = d;
+            this.ArtistName = ArtistName;
+            this.SongName = SongName;
+            this.Duration = Duration;
         }
+
+        public void SetDuration(int d)
+        {
+            for(int i=0; i<Duration.Length; i++)
+            { 
+                if (d > 0)
+                {
+                    Duration[i] = d;
+                }
+            }
+        }
+
+        public double[] GetDuration()
+        {
+            return Duration;
+        }
+
+        public void SetSongName(string s)
+        {
+            for (int i = 0; i < SongName.Length; i++)
+            {
+                if (s != "")
+                {
+                    SongName[i] = s;
+                }
+            }
+        }
+
+        public string[] GetSongName()
+        {
+            return SongName;
+        }
+
+        public void SetArtistName(string n)
+        {
+            if (n != "")
+            {
+                ArtistName = n;
+            }
+        }
+
+        public string GetArtistName()
+        {
+            return ArtistName;
+        }
+
         public double CalcDuration()
         {
             SumDuration = 0;
@@ -44,15 +90,15 @@ namespace _9thGrade
             return "Longest song from " + ArtistName + " you have listend to is: " + MaxN + "!" ;
         }
 
-        public string FinalString()
+        public override string ToString()
         {
             CalcDuration();
             string s = "";
             s = "You listend to " + SumDuration + " minutes of " + ArtistName + " music";
             int CountTen = 0;
-            for (int i=0; i<Duration.Length; i++)
+            for (int i = 0; i < Duration.Length; i++)
             {
-                if (Duration[i]>10)
+                if (Duration[i] > 10)
                 {
                     CountTen++;
                 }

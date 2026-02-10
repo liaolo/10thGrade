@@ -13,18 +13,18 @@ namespace Yod
        
         public static void UnitTests()
         {
-            CssGrades student1;
-            student1 = new CssGrades("Josh", 82, 98, 87, 17, 100);
+            //CssGrades student1;
+            //student1 = new CssGrades("Josh", 82, 98, 87, 17, 100);
 
-            int g = student1.Calc371();
-            Console.WriteLine(g);
-            Console.WriteLine(student1.Calc271());
-            Console.WriteLine(student1.Calc3());
-            Console.WriteLine(student1.Has5());
-            Console.WriteLine(student1.Calc5());
-            Console.WriteLine(student1);
-            student1.bagrut271 = 100;
-            Console.WriteLine(student1);
+            //int g = student1.Calc371();
+            //Console.WriteLine(g);
+            //Console.WriteLine(student1.Calc271());
+            //Console.WriteLine(student1.Calc3());
+            //Console.WriteLine(student1.Has5());
+            //Console.WriteLine(student1.Calc5());
+            //Console.WriteLine(student1);
+            //student1.bagrut271 = 100;
+            //Console.WriteLine(student1);
 
 
 
@@ -35,7 +35,7 @@ namespace Yod
 
             Console.WriteLine("Artist: " + m1.ArtistName);
             Console.WriteLine(m1.CalcL());
-            Console.WriteLine(m1.FinalString());
+            Console.WriteLine(m1);
         }
         
     }
