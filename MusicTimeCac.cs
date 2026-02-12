@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,59 +22,59 @@ namespace _9thGrade
             this.Duration = Duration;
         }
 
-        public void SetDuration(int d)
+        public void SetDuration(int Duration)
         {
-            for(int i=0; i<Duration.Length; i++)
+            for(int i=0; i<this.Duration.Length; i++)
             { 
-                if (d > 0)
+                if (Duration > 0)
                 {
-                    Duration[i] = d;
+                    this.Duration[i] = Duration;
                 }
             }
         }
 
         public double[] GetDuration()
         {
-            return Duration;
+            return this.Duration;
         }
 
-        public void SetSongName(string s)
+        public void SetSongName(string SongName)
         {
-            for (int i = 0; i < SongName.Length; i++)
+            for (int i = 0; i < this.SongName.Length; i++)
             {
-                if (s != "")
+                if (SongName != "")
                 {
-                    SongName[i] = s;
+                    this.SongName[i] = SongName;
                 }
             }
         }
 
         public string[] GetSongName()
         {
-            return SongName;
+            return this.SongName;
         }
 
-        public void SetArtistName(string n)
+        public void SetArtistName(string ArtistName)
         {
-            if (n != "")
+            if (ArtistName != "")
             {
-                ArtistName = n;
+                this.ArtistName = ArtistName;
             }
         }
 
         public string GetArtistName()
         {
-            return ArtistName;
+            return this.ArtistName;
         }
 
         public double CalcDuration()
         {
-            SumDuration = 0;
-            for(int i=0; i<SongName.Length; i++)
+            this.SumDuration = 0;
+            for(int i=0; i<this.SongName.Length; i++)
             {
-                SumDuration += Duration[i];
+                this.SumDuration += Duration[i];
             }
-            return SumDuration;
+            return this.SumDuration;
         }
         public string CalcL()
         {
@@ -81,24 +82,24 @@ namespace _9thGrade
             string MaxN = "";
             for (int i = 0; i < SongName.Length; i++)
             {
-                if(Duration[i]>maxL)
+                if(this.Duration[i]>maxL)
                 {
                     maxL = Duration[i];
                     MaxN = SongName[i];
                 }
             }
-            return "Longest song from " + ArtistName + " you have listend to is: " + MaxN + "!" ;
+            return "Longest song from " + this.ArtistName + " you have listend to is: " + MaxN + "!" ;
         }
-
+        
         public override string ToString()
         {
-            CalcDuration();
+            this.CalcDuration();
             string s = "";
-            s = "You listend to " + SumDuration + " minutes of " + ArtistName + " music";
+            s = "You listend to " + this.SumDuration + " minutes of " + this.ArtistName + " music";
             int CountTen = 0;
-            for (int i = 0; i < Duration.Length; i++)
+            for (int i = 0; i < this.Duration.Length; i++)
             {
-                if (Duration[i] > 10)
+                if (this.Duration[i] > 10)
                 {
                     CountTen++;
                 }
