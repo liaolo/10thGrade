@@ -11,7 +11,8 @@ namespace _9thGrade
             //Caesar.UnitTest();
             //ArraysPractice.UnitTest();
             //ArraysPractice2.UnitTest();
-            ClassPractice.UnitTests();
+            //ClassPractice.UnitTests();
+                Point.UnitTests();
         }
     }
 }

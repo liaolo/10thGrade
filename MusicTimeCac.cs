@@ -22,7 +22,7 @@ namespace _9thGrade
             this.Duration = Duration;
         }
 
-        public void SetDuration(int Duration)
+        public void GetDuration(int Duration)
         {
             for(int i=0; i<this.Duration.Length; i++)
             { 
@@ -33,12 +33,12 @@ namespace _9thGrade
             }
         }
 
-        public double[] GetDuration()
+        public double[] SetDuration()
         {
             return this.Duration;
         }
 
-        public void SetSongName(string SongName)
+        public void GetSongName(string SongName)
         {
             for (int i = 0; i < this.SongName.Length; i++)
             {
@@ -49,12 +49,12 @@ namespace _9thGrade
             }
         }
 
-        public string[] GetSongName()
+        public string[] SetSongName()
         {
             return this.SongName;
         }
 
-        public void SetArtistName(string ArtistName)
+        public void GetArtistName(string ArtistName)
         {
             if (ArtistName != "")
             {
@@ -62,7 +62,7 @@ namespace _9thGrade
             }
         }
 
-        public string GetArtistName()
+        public string SetArtistName()
         {
             return this.ArtistName;
         }
