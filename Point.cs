@@ -13,11 +13,13 @@ namespace _9thGrade
         {
             Point p1 = new Point(3, 4);
             Console.WriteLine(p1);
-            p1.Getx(5.5);
-            Console.WriteLine(p1.SetX());
-            p1.Gety(6);
-            Console.WriteLine(p1.Sety());
+            p1.SetX(5.5);
+            Console.WriteLine(p1.GetX());
+            p1.SetY(6);
+            Console.WriteLine(p1.GetY());
             Console.WriteLine(p1);
+            Point p2 = new Point();
+            Console.WriteLine(p2);
         }
 
         public double x;
@@ -29,24 +31,43 @@ namespace _9thGrade
             this.y = y;
         }
 
-        public void Getx(double x)
+        public Point(): this(0,0)
+        {
+        
+        }
+
+        public void SetX(double x)
         {
              this.x=x;
         }
 
-        public double SetX()
+        public double GetX()
         {
             return this.x;
         }
 
-        public void Gety(double y)
+        public void SetY(double y)
         {
              this.y = y;
         }
 
-        public double Sety()
+        public double GetY()
         {
             return this.y;
+        }
+
+        public double Distance(Point P) 
+        {
+            double dx = this.x - P.x;
+            double dy = this.y - P.y;
+            return Math.Sqrt(dx * dx + dy * dy);
+        }
+
+        public Point Midpoint(Point P)
+        {
+            double midX = (this.x + P.x) / 2;
+            double midY = (this.y + P.y) / 2;
+            return new Point(midX, midY);
         }
 
         public override string ToString()
