@@ -31,11 +31,10 @@ namespace _9thGrade
             this.y = y;
         }
 
-        public Point(): this(0,0)
-        {
-        
-        }
+        public Point() : this(0, 0) { }
 
+        public Point(Point P): this(P.x, P.y) { }
+        
         public void SetX(double x)
         {
              this.x=x;
