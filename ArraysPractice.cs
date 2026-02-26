@@ -12,65 +12,414 @@ namespace _9thGrade
     {
         public static void UnitTest()
         {
-
+            //Console.WriteLine(ArraysPractice.T1(5));
+            //Console.WriteLine(ArraysPractice.T2(new string[] { "Yakir", "Shlomi", "Avi", "Roni", "Moshe" }, new int[] { 50, 60, 70, 80, 90 }));
+            //int[] winners = ArraysPractice.T3(5);
+            //Console.WriteLine($"First: {winners[0]}, Second: {winners[1]}");
+            //ArraysPractice.T4(3);
+            //ArraysPractice.T_5_RotateRight(new int[] { 1, 2, 3, 4, 5 });
+            //ArraysPractice.T_5_RotateLeft(new int[] { 1, 2, 3, 4, 5 });
+            //Console.WriteLine(ArraysPractice.T6_a(90, 80, 70));
+            //ArraysPractice.T6_b(new int[] { 90, 80, 70 }, new int[] { 80, 70, 60 }, new int[] { 70, 60, 50 });
+            //ArraysPractice.T7(new int[] { 1, 2, 3, 4, 5 }, new int[] { 1, 3, 2, 4, 5 }, 2);
+            //Console.WriteLine(ArraysPractice.T9(20));
         }
 
-        public static int[] T11(int P)
+        public static int T1(int N)
         {
-            int[] arr = new int[P];
-            for (int i=0; i < P; i++)
+            int[] arr = new int[N];
+            int[] resistance = new int[N];
+            int countR = 0, sum = 0;
+            double ave = 0;
+
+            for (int i = 0; i < arr.Length; i++)
             {
-                Console.WriteLine("Which payilote are you going to");
-                int payilote = int.Parse(Console.ReadLine());
-                if (payilote == 0)
-                {
-                    arr[0]++;
-                }
-                else if (payilote == 1)
-                {
-                    arr[1]++;
-                }
-                else if (payilote == 2)
-                {
-                    arr[2]++;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid payilote");
-                }
-                return arr;
+                Console.WriteLine($"Enter the resistance for resistor {i + 1}");
+                resistance[i] = int.Parse(Console.ReadLine());
+                sum += resistance[i];
             }
+
+            ave = (double)sum / N;
+
+            for (int j = 0; j < resistance.Length; j++)
+            {
+                if (resistance[j] < 0.9 * ave || resistance[j] > 1.1 * ave)
+                {
+                    countR++;
+                }
+            }
+
+            return countR;
+        }
+
+        public static string T2(string[] name, int[] grade)
+        {
+            string s = "";
+            int ave = 0;
+            int sum = 0;
+            for (int i = 0; i < name.Length; i++)
+            {
+                sum += grade[i];
+            }
+
+            ave = sum / name.Length;
+
+            for (int j = 0; j < grade.Length; j++)
+            {
+                if (grade[j] > ave)
+                {
+                    s += name[j] + " ";
+                }
+            }
+            return s;
+        }
+
+        public static int[] T3(int N)
+        {
+            int[] counts = new int[N];
+
+            int vote;
+            Console.WriteLine("Enter project number (1..N) or -1 to finish:");
+            vote = int.Parse(Console.ReadLine());
+
+            while (vote != -1)
+            {
+                counts[vote]++;
+                Console.WriteLine("Enter project number (1..N) or -1 to finish:");
+                vote = int.Parse(Console.ReadLine());
+            }
+
+            int first = 1, second = 2;
+            if (counts[second] > counts[first])
+            {
+                int tmp = first;
+                first = second;
+                second = tmp;
+            }
+
+            for (int i = 3; i <= N; i++)
+            {
+                if (counts[i] > counts[first])
+                {
+                    second = first;
+                    first = i;
+                }
+                else if (counts[i] > counts[second])
+                {
+                    second = i;
+                }
+            }
+
+            return new int[] { first, second };
+        }
+
+        public static int T4(int N)
+        {
+            int[] Judges = new int[5];
+            int[] Proj = new int[N];
+            int[] SumP = new int[N];
+
+            for (int i = 0; i < Proj.Length; i++)
+            {
+                Console.WriteLine($"Enter the Grades for Proj number {i + 1} ");
+                for (int j = 0; j < Judges.Length; j++)
+                {
+                    Judges[j] = int.Parse(Console.ReadLine());
+                    SumP[i] += Judges[j];
+                }
+            }
+
+            int max = SumP[0];
+            int Imax = 1;
+
+            for (int i = 1; i < SumP.Length; i++)
+            {
+                if (SumP[i] > max)
+                {
+                    max = SumP[i];
+                    Imax = i + 1;
+                }
+            }
+
+            return Imax;
+        }
+
+        // הזזה ימינה
+        public static void T_5_RotateRight(int[] arr)
+        {
+            int temp = arr[arr.Length - 1];
+
+            for (int i = arr.Length - 1; i > 0; i--)
+            {
+                arr[i] = arr[i - 1];
+            }
+
+            arr[0] = temp;
+        }
+
+        // הזזה שמאלה
+        public static void T_5_RotateLeft(int[] arr)
+        {
+            int temp = arr[0];
+
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                arr[i] = arr[i + 1];
+            }
+
+            arr[arr.Length - 1] = temp;
+        }
+
+        public static int T6_a(int Bagrut, int Magen, int Proj)
+        {
+            double Sum = 0;
+            Sum += Bagrut * 0.49 + Magen * 0.3 + Proj * 0.21;
+            Sum += 0.5;
+
+            return (int)Sum;
+        }
+
+        public static int[] T6_b(int[] Bagrut, int[] Magen, int[] Proj)
+        {
+            int[] finalGrades = new int[Bagrut.Length];
+            for (int i = 0; i < Bagrut.Length; i++)
+            {
+                finalGrades[i] = T6_a(Bagrut[i], Magen[i], Proj[i]);
+            }
+            return finalGrades;
+        }
+
+        public static int[] T7(int[] arr1, int[] arr2, int n)
+        {
+            int Max = 0;
+            int[] arr = new int[Max];
+            Max = Math.Max(arr1[0], arr2[0]);
+
+            for (int i = 0; i < Max; i++)
+            {
+                if (arr1[i] == arr2[i])
+                {
+                    if (arr1[i] % n == 0)
+                    {
+                        arr[i] = arr1[i];
+                    }
+                }
+            }
+
             return arr;
         }
 
-        public static int[] T11_b(int[] P)
+        public static int T8(int[] arr)
         {
-            int[] Rooms = new int[P.Length];
-            for (int i=0; i < P.Length; i++)
+            int num = 0;
+
+            for (int i = 0; i < arr.Length; i++)
             {
-                if(P[i] < 40)
-                {
-                    Rooms[i]++;
-                }
-                else
-                {
-                    Rooms[i] = 2;
-                }
+                num = num * 10 + arr[i];
             }
-            return Rooms;
+
+            return num;
         }
 
-        public static void T11_C()
+        public static int[] T9(int age)
         {
-            for(int i=0; i < 3; i++)
+            int[] arr = new int[3];
+
+            if (age >= 12 && age <= 16 && age <= 18)
             {
-                Console.WriteLine("How many students are in the class?");
-                int N = int.Parse(Console.ReadLine());
+                arr[0] = 1;
+                arr[1] = 0;
+                arr[2] = 0;
             }
-            int[] lid = new int [3];
-            lid=T11_b(lid);
+            else if (age >= 16 && age <= 18)
+            {
+                arr[1] = 1;
+                arr[0] = 0;
+                arr[2] = 0;
+            }
+            else if (age > 18)
+            {
+                arr[2] = 1;
+                arr[0] = 0;
+                arr[1] = 0;
+            }
+
+            return arr;
+        }
+
+        public static int T10_a(int Slevel, int Sunit, int Scurrentlevel, int Unitcurrent)
+        {
+            if (Slevel == 1 && Sunit == 1)
+            {
+                return Unitcurrent - Sunit;
+            }
+
+            else if (Slevel == 1 && Scurrentlevel == 2)
+            {
+                return Unitcurrent - Sunit + 1;
+            }
+
+            else if (Slevel == 2 && Sunit == 1)
+            {
+                return Unitcurrent - Sunit - 1;
+            }
+            else if (Slevel == 2 && Sunit == 2)
+            {
+                return Unitcurrent - Sunit;
+            }
+
+            else
+            {
+                return -1; // Invalid input
+            }
+        }
+
+        public static int T10_b(int[] arr)
+        {
+            int max = arr[0];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+            }
+
+            return max;
+        }
+
+        public static void T10_c()
+        {
+            int[] arr = new int[2000];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine($"Student {i + 1}: Enter start level:");
+                int Slevel = int.Parse(Console.ReadLine());
+
+                Console.WriteLine($"Student {i + 1}: Enter start unit:");
+                int Sunit = int.Parse(Console.ReadLine());
+
+                Console.WriteLine($"Student {i + 1}: Enter current level:");
+                int Scurrentlevel = int.Parse(Console.ReadLine());
+
+                Console.WriteLine($"Student {i + 1}: Enter current unit:");
+                int Unitcurrent = int.Parse(Console.ReadLine());
+
+                arr[i] = T10_a(Slevel, Sunit, Scurrentlevel, Unitcurrent);
+            }
+
+            int max = T10_b(arr);
+
+            int count = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == max)
+                    count++;
+            }
+
+            Console.WriteLine("Max improvement: " + max);
+            Console.WriteLine("Number of students with max improvement: " + count);
+        }
+
+        public static int[] T11a()
+        {
+            int[] arr = new int[3]; // 0=ציור, 1=תאטרון, 2=שירה
+
+            Console.WriteLine("Enter number of registrations today:");
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Enter activity (0=Painting, 1=Theater, 2=Singing):");
+                int activity = int.Parse(Console.ReadLine());
+
+                arr[activity]++;
+            }
+
+            return arr;
+        }
+
+        public static int T11b(int[] arr)
+        {
+            int rooms = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] < 40)
+                    rooms += 1;
+                else
+                    rooms += 2;
+            }
+
+            return rooms;
+        }
+
+        public static void T11C()
+        {
+            int[] arr = T11a();
+            int totalRooms = T11b(arr);
+
+            Console.WriteLine("Total rooms needed: " + totalRooms);
+        }
+
+        public static double T12a()
+        {
+            int grade;
+            int count = 0;
+            int sum = 0;
+
+            Console.WriteLine("Enter satisfaction grades (1-10). -1 to stop:");
+
+            grade = int.Parse(Console.ReadLine());
+
+            while (grade != -1)
+            {
+                sum += grade;
+                count++;
+
+                grade = int.Parse(Console.ReadLine());
+            }
+
+            if (count < 100)
+                return 0;
+
+            return (double)sum / count;
+        }
+
+        public static bool T12b(double[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] <= 8)
+                    return false;
+            }
+
+            return true;
+        }
+
+        public static void T12C()
+        {
+            double[] months = new double[12];
+
+            for (int i = 0; i < 12; i++)
+            {
+                Console.WriteLine("Month " + (i + 1));
+                months[i] = T12a();
+            }
+
+            if (T12b(months))
+            {
+                Console.WriteLine("The employees qualify for Employee of the Year.");
+            }
+
+            else
+            {
+                Console.WriteLine("The employees do not qualify.");
+
+            }
 
         }
     }
 }
-        

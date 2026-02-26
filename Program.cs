@@ -13,7 +13,11 @@ namespace _9thGrade
             //ArraysPractice2.UnitTest();
             //ClassPractice.UnitTests();
             //Point.UnitTests();
-            Date.UnitTest();
+            //Date.UnitTest();
+            //Rational.UnitTest();
+            //Rectangle.UnitTest();
+            //Passport.UnitTest();
+            //Traveler.UnitTest();
         }
     }
 }

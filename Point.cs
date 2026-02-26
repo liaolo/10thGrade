@@ -8,7 +8,6 @@ namespace _9thGrade
 {
     public class Point
     {
-
         public static void UnitTests()
         {
             Point p1 = new Point(3, 4);

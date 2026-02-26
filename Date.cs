@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _9thGrade
 {
-    internal class Date
+    public class Date
     {
         public static void UnitTest()
         {
@@ -74,7 +74,7 @@ namespace _9thGrade
             return this.Year;
         }
 
-        int CompareTo(Date Other)
+        public int CompareTo(Date Other)
         {
            if (this.Year > Other.Year)
            {
