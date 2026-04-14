@@ -80,6 +80,22 @@ namespace _9thGrade
         {
             this.expiryDate = new Date(expiryDate);
         }
+
+        public static Passport[] passportsNotValidOnDate(Passport[] passports)
+        {
+            Date dateChecked = new Date(1, 1, 2025);
+            int countNotValid = 0;
+            for (int i = 0; i < passports.Length; i++)
+            {
+                if (passports[i].IsValid(dateChecked))
+                {
+                    countNotValid++;
+                }
+            }
+            Passport[] notValidPassports = new Passport[countNotValid];
+
+            return notValidPassports;
+        }
     }
 }
 
