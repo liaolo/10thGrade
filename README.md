@@ -1,4 +1,4 @@
-# 9thGrade
+# 10thGrade
 [![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/liaolo/9thGrade.git)
 
 This repository contains a collection of C# programming exercises and assignments, likely from a 9th-grade computer science curriculum. The project is a .NET console application demonstrating fundamental programming concepts through various practical problems.
