@@ -4,10 +4,11 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace _10thGrade
 {
-    internal class Date
+    public class Date
     {
         public static void UnitTest()
         {
@@ -26,9 +27,9 @@ namespace _10thGrade
             Console.WriteLine(d1.CompareTo(d2));
         }
         
-        public int Day;
-        public int Month;
-        public int Year;
+        private int Day;
+        private int Month;
+        private int Year;
 
         public Date(int Day, int Month, int Year)
         {
@@ -74,7 +75,7 @@ namespace _10thGrade
             return this.Year;
         }
 
-        int CompareTo(Date Other)
+        public int CompareTo(Date Other)
         {
            if (this.Year > Other.Year)
            {
@@ -88,6 +89,16 @@ namespace _10thGrade
            {
                 return this.Year - Other.Year;
            }
+        }
+
+        public static bool leapYear(int year)
+        {
+            bool B = false;
+            if (year % 4 == 0 && year % 100 == 0 || year % 400 == 0)
+            {
+                B = true;
+            }
+            return B;
         }
 
         public override string ToString()

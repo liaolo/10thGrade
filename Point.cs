@@ -8,7 +8,6 @@ namespace _10thGrade
 {
     public class Point
     {
-
         public static void UnitTests()
         {
             Point p1 = new Point(3, 4);
@@ -22,8 +21,8 @@ namespace _10thGrade
             Console.WriteLine(p2);
         }
 
-        public double x;
-        public double y;
+        private double x;
+        private double y;
 
         public Point(double x, double y)
         {
@@ -67,6 +66,29 @@ namespace _10thGrade
             double midX = (this.x + P.x) / 2;
             double midY = (this.y + P.y) / 2;
             return new Point(midX, midY);
+        }
+
+        public double gradient(Point P)
+        {
+            int gradient = 0;
+            int dx = (int)(P.x - this.x);
+            int dy = (int)(P.y - this.y);
+
+            gradient = dy / dx;
+            return gradient;
+        }
+
+        public static Point FarthestfromOrigin(Point[] points)
+        {
+            Point farthest = points[0];
+            for (int i = 1; i < points.Length; i++)
+            {
+                if (points[i].Distance(new Point(0, 0)) > farthest.Distance(new Point(0, 0)))
+                {
+                    farthest = points[i];
+                }
+            }
+            return farthest;
         }
 
         public override string ToString()
