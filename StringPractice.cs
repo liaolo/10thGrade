@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _9thGrade
+namespace _10thGrade
 {
     internal class StringPractice
     {

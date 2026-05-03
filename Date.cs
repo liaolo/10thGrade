@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _9thGrade
+namespace _10thGrade
 {
     internal class Date
     {
@@ -95,4 +95,6 @@ namespace _9thGrade
               return $"{Day}.{Month}.{Year}";
         }
     }
+    
+
 }

@@ -1,6 +1,6 @@
 ﻿using Yod;
 
-namespace _9thGrade
+namespace _10thGrade
 {
     internal class Program
     {
@@ -13,7 +13,22 @@ namespace _9thGrade
             //ArraysPractice2.UnitTest();
             //ClassPractice.UnitTests();
             //Point.UnitTests();
-            Date.UnitTest();
+            //Date.UnitTest();
+            //Parabula.UnitTests();
+
+
+        
+            int[,] a = new int[3, 4];
+            for (int row = 0; row < a.GetLength(0); row++)
+            {
+                for (int col = 0; col < a.GetLength(1); col++)
+                {
+                    Console.Write(a[row, col] + "\t");
+                }
+                Console.WriteLine();
+            }
         }
+
+
     }
 }

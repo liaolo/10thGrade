@@ -1,4 +1,4 @@
-﻿namespace _9thGrade
+﻿namespace _10thGrade
 {
     internal class Caesar
     {
